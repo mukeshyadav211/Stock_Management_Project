@@ -1,0 +1,11 @@
+com\mks\sageit\StockManagementSystemApplication.class
+com\mks\sageit\security\ApplicationSecurityConfig.class
+com\mks\sageit\model\Order.class
+com\mks\sageit\service\ItemService.class
+com\mks\sageit\repository\OrderRepository.class
+com\mks\sageit\controller\LoginController.class
+com\mks\sageit\service\OrderService.class
+com\mks\sageit\security\PasswordConfig.class
+com\mks\sageit\repository\ItemRepository.class
+com\mks\sageit\controller\StockController.class
+com\mks\sageit\model\Item.class
