@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.mks.sageit.model.Item;
 
 @EnableJpaRepositories
-public interface ItemRepository extends JpaRepository<Item, String> {
+public interface ItemRepository extends JpaRepository<Item, Integer> {
 	Item findByItemname(String name);
 
 	@Query(value = "select * from items i where i.item_id = ?1", nativeQuery = true)

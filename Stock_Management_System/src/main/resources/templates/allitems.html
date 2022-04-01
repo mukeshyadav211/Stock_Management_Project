@@ -71,6 +71,8 @@ th {
 						<th class="text-uppercase " scope="col">Name</th>
 						<th class="text-uppercase " scope="col">Description</th>
 						<th class="text-uppercase " scope="col">current stock</th>
+						<th class="text-uppercase " scope="col">Action</th>
+				
 					</tr>
 				</thead>
 				<tbody>
@@ -79,6 +81,8 @@ th {
 						<td th:text="${item.itemname}" align="center"></td>
 						<td th:text="${item.item_description}" align="center"></td>
 						<td th:text="${item.current_stock}" align="center"></td>
+						<td><a th:href="@{'/edititem?id=' + ${item.item_id}}">Edit</a> / 
+						<a th:href="@{'/deleteitem?id=' + ${item.item_id}}">Delete</a></td>
 					</tr>
 
 				</tbody>

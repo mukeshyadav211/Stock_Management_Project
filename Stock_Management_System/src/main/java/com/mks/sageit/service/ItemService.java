@@ -32,5 +32,9 @@ public class ItemService {
 	public Item findByName(String name) {
 		return repository.findByItemname(name);
 	}
+	
+	public void deleteById(int id) {
+		 repository.deleteById(id);
+	}
 
 }

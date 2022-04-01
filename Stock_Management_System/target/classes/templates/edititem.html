@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All items</title>
+<title>Update item</title>
+
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -45,52 +46,48 @@
 	margin: 30px;
 	padding: 50px;
 }
-
-th {
-	text-align: center;
-	background-color: lightslategray;
-	color: black;
-}
 </style>
 </head>
-
-</head>
 <body>
-
 	<header th:insert="/navbar.html :: header"></header>
-	<br />
-	<br />
+	<div class="container">
+		<div class="d-flex justify-content-center">
+			<div class="row">
+				<div class="col-mid-4">
+					<form class="card p-3 bg-light" action=# th:object="${item}"
+						th:action="@{/updateitem}">
+						<h2 class="heading">
+							<strong>Update item</strong>
+							</h4>
+							<hr>
+							<div class="well well-sm">
+								<input type="hidden" name="id" th:field="${item.item_id}">
+								
+								<div class="form-group col-lg-100">
+									<label for="exampleInputName2" class="col-sm-2 control-label">ITEM
+										NAME:</label> <input type="text" class="form-control"
+										th:field="${item.itemname}" placeholder="item name">
+								</div>
+								<div class="form-group col-lg-100">
+									<label for="exampleInputName2" class="col-sm-2 control-label">ITEM
+										DESCRIPTION: </label> <input type="text" class="form-control"
+										th:field="${item.item_description}"
+										placeholder="item description">
+								</div>
+								<div class="form-group col-lg-100">
+									<label for="exampleInputName2" class="col-sm-2 control-label">CURRENT
+										STOCK:</label> <input type="number" class="form-control"
+										th:field="${item.current_stock}" placeholder="current stock">
+								</div>
+								<button type="submit" class="btn btn-primary">Update</button>
 
-	<div class="container my-4">
-		<div class="d-flex justified-content-center">
-			<br /> <br /> <br />
-			<table class="table table-bordered table-hover table-striped">
-				<thead class="thead-dark" align="center">
-					<tr>
-						<th class="text-uppercase " scope="col">ID</th>
-						<th class="text-uppercase " scope="col">Name</th>
-						<th class="text-uppercase " scope="col">Description</th>
-						<th class="text-uppercase " scope="col">current stock</th>
-						<th class="text-uppercase " scope="col">Action</th>
-				
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="item: ${items}">
-						<td th:text="${item.item_id}" align="center"></td>
-						<td th:text="${item.itemname}" align="center"></td>
-						<td th:text="${item.item_description}" align="center"></td>
-						<td th:text="${item.current_stock}" align="center"></td>
-						<td><a th:href="@{'/edititem?id=' + ${item.item_id}}">Edit</a> / 
-						<a th:href="@{'/deleteitem?id=' + ${item.item_id}}">Delete</a></td>
-					</tr>
-
-				</tbody>
-			</table>
-
+							</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
+	</div>
 
-</body>
 </body>
 </html>
